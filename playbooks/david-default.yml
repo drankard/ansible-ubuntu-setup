@@ -4,8 +4,6 @@
   sudo: yes
 
   tasks:
-  - name: welcome to {{user}}
-    action: echo 'hello'    
   - name: install fakeroot
     apt: pkg=fakeroot update_cache=yes
   - name: install google-chrome-stable
@@ -16,3 +14,5 @@
     apt: pkg=vim update_cache=yes
   - name: setup vim
     file: src=/usr/share/vim/vimrc dest=/home/dfn/.vimrc owner=dfn group=dfn state=link
+  - name: Installing wget
+    apt: pkg=wget update_cache=yes

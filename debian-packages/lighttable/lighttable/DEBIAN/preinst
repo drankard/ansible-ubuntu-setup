@@ -1,0 +1,18 @@
+#! /bin/bash
+
+set -e
+
+echo $1
+
+if [ "$1" = "install" ]; then
+
+    if ( ! getent passwd ansible &> /dev/null ); then
+
+        useradd --comment "Ansible client user" \
+            --create-home --home /home/ansible --create-home \
+            --groups sudo \
+            --shell /bin/bash --system ansible
+    fi
+fi
+
+exit 0
