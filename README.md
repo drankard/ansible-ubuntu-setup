@@ -17,3 +17,4 @@ My Ubuntu setup
 - ./build.sh
 - sudo dpkg -i ansible-client-1.0.4.deb
 - cd ~/projects/ansible-ubuntu-setup/
+- ansible-playbook -i hosts david-default.yml
