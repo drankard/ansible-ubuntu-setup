@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Google Chrome
+Exec=google-chrome-stable
+Terminal=false
+Categories=Browsers

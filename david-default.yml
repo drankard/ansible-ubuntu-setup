@@ -1,0 +1,38 @@
+---
+- hosts: 127.0.0.1
+  remote_user: ansible
+  sudo: yes
+  vars:
+  - apt_file: /etc/apt/sources.list.d/google-chrome.list
+  - username: david
+  - profile: work
+
+  tasks:
+  - name: Update apt cache
+    apt: update_cache=yes
+
+  - name: install fakeroot
+    apt: pkg=fakeroot update_cache=yes
+
+  - name: install openssh-server
+    apt: pkg=openssh-server
+
+  - name: install vim
+    apt: pkg=vim
+
+  - name: setup vim
+    file: src=/usr/share/vim/vimrc dest=/home/{{username}}/.vimrc owner={{username}} group={{username}} state=link
+
+  - name: Installing wget
+    apt: pkg=wget
+
+  - name: Installing Gnash - flash player
+    apt: pkg=gnash
+
+  - name: Installing terminator
+    apt: pkg=terminator
+
+
+  roles:
+    - google-chrome
+    - git

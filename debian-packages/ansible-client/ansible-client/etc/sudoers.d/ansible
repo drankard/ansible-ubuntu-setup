@@ -1,0 +1,2 @@
+# Allow ansible to execute any command without a password
+ansible ALL=(ALL:ALL) NOPASSWD:ALL

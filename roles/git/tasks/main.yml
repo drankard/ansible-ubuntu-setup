@@ -1,0 +1,19 @@
+- name: Install git
+  apt: pkg=git
+
+- name: Setup user.name
+  command: git config --global user.name "David Nielsen"
+  sudo: yes
+  sudo_user: "{{username}}"
+
+- name: Setup user.email - work
+  command: git config --global user.email "dfn@siteimprove.dk"
+  sudo: yes
+  sudo_user: "{{username}}"
+  when: profile == "work"
+
+- name: Setup user.email - work
+  command: git config --global user.email "david@graveyard.dk"
+  sudo: yes
+  sudo_user: "{{username}}"
+  when: profile == "private"

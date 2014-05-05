@@ -1,0 +1,8 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "purge" ] ; then
+    userdel --force --remove ansible > /dev/null || true
+    rm -rf /home/ansible
+fi
