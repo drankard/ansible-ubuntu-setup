@@ -1,7 +1,8 @@
 ---
-- hosts: 127.0.0.1
-  remote_user: ansible
+- hosts: localhost
+  connection: local 
   sudo: yes
+
   vars:
   - apt_file: /etc/apt/sources.list.d/google-chrome.list
   - username: david
@@ -13,9 +14,6 @@
 
   - name: install fakeroot
     apt: pkg=fakeroot update_cache=yes
-
-  - name: install openssh-server
-    apt: pkg=openssh-server
 
   - name: install vim
     apt: pkg=vim
@@ -36,3 +34,4 @@
   roles:
     - google-chrome
     - git
+    - ssh

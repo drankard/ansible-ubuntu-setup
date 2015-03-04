@@ -7,7 +7,7 @@
   sudo_user: "{{username}}"
 
 - name: Setup user.email - work
-  command: git config --global user.email "dfn@siteimprove.dk"
+  command: git config --global user.email "dn@skm.dk"
   sudo: yes
   sudo_user: "{{username}}"
   when: profile == "work"

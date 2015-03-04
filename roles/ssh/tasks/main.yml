@@ -1,0 +1,5 @@
+- name: install openssh-server
+  apt: pkg=openssh-server
+
+- name: install keychain
+  apt: pkg=keychain
